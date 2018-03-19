@@ -1,0 +1,9 @@
+/.idea
+/.vscode/
+/bower_components/
+/examples/main.js
+/examples/site.css
+/node_modules/
+/npm-debug.log
+jsconfig.json
+yarn.lock
