@@ -169,43 +169,37 @@ class ScrollBar extends React.Component {
     const _containerClassNameActive = isDragging ? containerClassNameActive : '';
     let containerClassNameOrientation = isHorizontal ? containerClassNameHorizontal : containerClassNameVertical;
     let scrollbarContainerClasses = [containerClassName, _containerClassNameActive, containerClassNameOrientation].join(' ');
-
-    return ( <
-      Motion style = {
-        springifiedScrollStyles
-      } > {
-        style =>
-        <
-        div
-        className = {
-          scrollbarContainerClasses
+    
+    return (
+      <Motion style = {springifiedScrollStyles}>
+        {
+          style =>
+          <div
+            className={
+              scrollbarContainerClasses
+            }
+            style={
+              containerStyle
+            }
+            onMouseDown={
+              this.handleScrollBarContainerClick.bind(this)
+            }
+            ref={
+              x => this.scrollbarContainer = x
+            }
+          >
+          <div
+            className={scrollbarClassName}
+            style={
+              { ...scrollbarStyle,
+                ...style
+              }
+            }
+            onMouseDown={this.handleMouseDown.bind(this)}
+          />
+          </div>
         }
-        style = {
-          containerStyle
-        }
-        onMouseDown = {
-          this.handleScrollBarContainerClick.bind(this)
-        }
-        ref = {
-          x => this.scrollbarContainer = x
-        } >
-        <
-        div
-        className = {
-          scrollbarClassName
-        }
-        style = {
-          { ...scrollbarStyle,
-            ...style
-          }
-        }
-        onMouseDown = {
-          this.handleMouseDown.bind(this)
-        }
-        /> <
-        /div>
-      } <
-      /Motion>
+      </Motion>
     );
   }
 }

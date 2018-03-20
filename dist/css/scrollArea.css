@@ -8,52 +8,52 @@
   outline: 0;
 }
 .scrollarea {
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 .scrollarea .scrollbar-container {
+  background-color: none;
+  opacity: 0.1;
   position: absolute;
-  background: none;
-  opacity: .1;
   z-index: 9999;
-  -webkit-transition: all .4s;
-  -moz-transition: all .4s;
-  -ms-transition: all .4s;
-  -o-transition: all .4s;
-  transition: all .4s;
+  -webkit-transition: background-color linear 0.4s, opacity linear 0.4s;
+  -moz-transition: background-color linear 0.4s, opacity linear 0.4s;
+  -ms-transition: background-color linear 0.4s, opacity linear 0.4s;
+  -o-transition: background-color linear 0.4s, opacity linear 0.4s;
+  transition: background-color linear 0.4s, opacity linear 0.4s;
 }
 .scrollarea .scrollbar-container.horizontal {
-  width: 100%;
+  bottom: 0;
   height: 10px;
   left: 0;
-  bottom: 0;
+  width: 100%;
 }
 .scrollarea .scrollbar-container.horizontal .scrollbar {
-  width: 20px;
+  background-color: #000;
   height: 8px;
-  background: black;
-  margin-top: 1px;
+  margin: 1px 0 0;
+  width: 20px;
 }
 .scrollarea .scrollbar-container.vertical {
-  width: 10px;
   height: 100%;
   right: 0;
   top: 0;
+  width: 10px;
 }
 .scrollarea .scrollbar-container.vertical .scrollbar {
-  width: 8px;
+  background-color: #000;
   height: 20px;
-  background: black;
-  margin-left: 1px;
+  margin: 0 0 0 1px;
+  width: 8px;
 }
 .scrollarea .scrollbar-container:hover {
-  background: gray;
-  opacity: .6 !important;
+  background-color: gray;
+  opacity: 0.6;
 }
 .scrollarea .scrollbar-container.active {
-  background: gray;
-  opacity: .6 !important;
+  background-color: gray;
+  opacity: 0.6;
 }
 .scrollarea:hover .scrollbar-container {
-  opacity: .3;
+  opacity: 0.3;
 }
